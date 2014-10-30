@@ -7,6 +7,7 @@ import com.zoowii.formutils.ValidateHelper;
 import com.zoowii.formutils.annotations.Email;
 import com.zoowii.formutils.annotations.Length;
 import com.zoowii.formutils.annotations.NotEmpty;
+import com.zoowii.formutils.annotations.Range;
 import com.zoowii.formutils.constraits.*;
 import com.zoowii.formutils.exceptions.ValidateRuntimeException;
 
@@ -51,6 +52,7 @@ public class Validator {
         registerConstraint(Past.class, PastConstrait.class);
         registerConstraint(Pattern.class, PatternConstrait.class);
         registerConstraint(Size.class, SizeConstrait.class);
+        registerConstraint(Range.class, RangeConstrait.class);
     }
 
     @SuppressWarnings("unchecked")
