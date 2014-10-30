@@ -1,19 +1,21 @@
 package com.zoowii.formutils.test;
 
 import com.zoowii.formutils.annotations.Email;
+import com.zoowii.formutils.annotations.Length;
 import com.zoowii.formutils.annotations.NotEmpty;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Past;
+import java.util.Date;
 
 /**
  * Created by zoowii on 14/10/30.
  */
 public class DemoForm {
     @NotNull
-    @Size(min = 4, max = 30)
+    @Length(min = 4, max = 30)
     private String name;
     @Email
     @NotEmpty(message = "The email can't be empty")
@@ -21,6 +23,8 @@ public class DemoForm {
     @Min(18)
     @Max(150)
     private int age;
+    @Past
+    private Date createTime;
 
     public String getName() {
         return name;
@@ -44,5 +48,13 @@ public class DemoForm {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

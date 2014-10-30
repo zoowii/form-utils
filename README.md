@@ -16,7 +16,7 @@ Yet another form validator library
     // define the form class
     public class DemoForm {
         @NotNull
-        @Size(min = 4, max = 30)
+        @Length(min = 4, max = 30)
         private String name;
         @Email
         @NotEmpty(message = "The email can't be empty")
@@ -24,6 +24,8 @@ Yet another form validator library
         @Min(18)
         @Max(150)
         private int age;
+        @Past
+        private Date createTime;
 
         ... getters and setters
     }
