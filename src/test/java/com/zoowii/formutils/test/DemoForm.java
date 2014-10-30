@@ -4,6 +4,7 @@ import com.zoowii.formutils.annotations.Email;
 import com.zoowii.formutils.annotations.Length;
 import com.zoowii.formutils.annotations.NotEmpty;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -25,6 +26,9 @@ public class DemoForm {
     private int age;
     @Past
     private Date createTime;
+
+    @Valid
+    private DemoForm subForm;
 
     public String getName() {
         return name;
@@ -56,5 +60,13 @@ public class DemoForm {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public DemoForm getSubForm() {
+        return subForm;
+    }
+
+    public void setSubForm(DemoForm subForm) {
+        this.subForm = subForm;
     }
 }

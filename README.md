@@ -10,7 +10,7 @@ Yet another form validator library
     <dependency>
       <groupId>com.zoowii</groupId>
       <artifactId>formutils</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
 
     // define the form class
@@ -27,6 +27,9 @@ Yet another form validator library
         @Past
         private Date createTime;
 
+        @Valid
+        private DemoForm subForm;
+
         ... getters and setters
     }
 
@@ -36,8 +39,9 @@ Yet another form validator library
     demoForm.setName(null);
     demoForm.setEmail("test@email.com");
     demoForm.setAge(200);
+    demoForm.setSubForm(new DemoForm());
     BindingResult bindingResult = validator.validate(demoForm);
-    Assert.assertEquals(bindingResult.getErrorCount(), 2);
+    Assert.assertEquals(bindingResult.getErrorCount(), 5);
 
     // you can also define your own validation annotation and the mapped constrait class
     // just extend the Constrait<T extends Annotation> class

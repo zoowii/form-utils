@@ -17,7 +17,8 @@ public class DemoTest {
         demoForm.setName(null);
         demoForm.setEmail("test@email.com");
         demoForm.setAge(200);
+        demoForm.setSubForm(new DemoForm());
         BindingResult bindingResult = validator.validate(demoForm);
-        Assert.assertEquals(bindingResult.getErrorCount(), 2);
+        Assert.assertEquals(bindingResult.getErrorCount(), 5);
     }
 }
