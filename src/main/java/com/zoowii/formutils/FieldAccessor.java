@@ -1,6 +1,7 @@
 package com.zoowii.formutils;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.validation.constraints.NotNull;
 import java.lang.reflect.Field;
@@ -11,7 +12,7 @@ import java.lang.reflect.Method;
  * Created by zoowii on 14/10/24.
  */
 public class FieldAccessor {
-    private static final Logger LOG = Logger.getLogger(FieldAccessor.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FieldAccessor.class);
     private Field field;
     private Method getMethod;
     private Method setMethod;

@@ -43,4 +43,8 @@ public class BindingResult {
     public void setModel(Class<?> model) {
         this.model = model;
     }
+
+    public ValidateError getFirstError() {
+        return hasErrors() ? validateErrors.get(0) : null;
+    }
 }

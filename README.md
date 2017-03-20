@@ -10,7 +10,7 @@ Yet another form validator library
     <dependency>
       <groupId>com.zoowii</groupId>
       <artifactId>formutils</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.3</version>
     </dependency>
 
     // define the form class
